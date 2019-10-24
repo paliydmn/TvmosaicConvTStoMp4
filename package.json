@@ -8,13 +8,11 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "fluent-ffmpeg": "^2.1.2",
-    "mediaelement-plugins": "^2.5.0",
-    "node-vlc-http": "^1.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node video.js"
   },
-  "author": "",
+  "author": "Paliy",
   "license": "ISC"
 }
