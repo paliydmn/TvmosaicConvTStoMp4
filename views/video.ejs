@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <video id="myVideo" width="400" controls autoplay>
+    <source src="/assets/out.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <!-- <video width="400" controls>
+  <source src="http://10.0.0.7:9271/stream/direct?client=8aa0a7bd-7059-4760-b167-b5edb0bc5eb1&channel=1:10743000:1:1051:28724&transcoder=mp4&client_id=8aa0a7bd-7059-4760-b167-b5edb0bc5eb1&bitrate=2048&scale=2&lng=eng" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video> -->
+
+
+  <!-- ffmpeg -i input.ts -acodec copy -vcodec copy out.mp4-->
+
+
+
+  <script type='text/javascript'>
+   
+   // var seconds = myVideo.duration;
+    
+    document.getElementById('myVideo').addEventListener('ended', myHandler, false);
+    function myHandler(e) {
+
+      var vidURL = '/assets/out.mp4';
+      function vidSwap(vidURL) {
+        var myVideo = document.getElementsByTagName('video')[0];
+        var seconds = parseInt(myVideo.duration);
+        myVideo.src = vidURL;
+        myVideo.load();
+        myVideo.currentTime = seconds -2;
+        myVideo.play();
+      }
+      vidSwap(vidURL);
+      // What you want to do after the event
+    }
+  </script>
+</body>
+
+</html>
